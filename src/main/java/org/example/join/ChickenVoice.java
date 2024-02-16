@@ -21,15 +21,14 @@ public class ChickenVoice {
                 }
                 System.out.println("Курица!");
             }
-
-            if(eggOpinion.isAlive())//(если Поток еще выполняется) Если оппонент еще не сказал последнее слово
+            if (eggOpinion.isAlive())//(если Поток еще выполняется) Если оппонент еще не сказал последнее слово
             {
-                try{
+                try {
                     eggOpinion.join();//Подождать пока оппонент закончит высказываться.
-                }catch(InterruptedException e) {
+                } catch (InterruptedException e) {
                 }
                 System.out.println("Первым появилось яйцо!");
-            }else{
+            } else {
                 System.out.println("Первой появилась курица!");
             }
         };
